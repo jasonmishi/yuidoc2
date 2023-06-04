@@ -89,8 +89,8 @@
   },
   "scripts": {
     "linting": "eslint lib/*.js tests/*.js",
-    "test": "istanbul cover --print=both --yui ytestrunner -- --include ./YUITest_tests/options.js --include ./YUITest_tests/builder.js --include ./YUITest_tests/parser.js --include ./YUITest_tests/parser_coffee.js --include ./YUITest_tests/files.js --include ./YUITest_tests/utils.js --include ./YUITest_tests/preprocessor.js",
-    "test-mocha": "c8 mocha"
+    "test-istanbul": "istanbul cover --print=both --yui ytestrunner -- --include ./YUITest_tests/options.js --include ./YUITest_tests/builder.js --include ./YUITest_tests/parser.js --include ./YUITest_tests/parser_coffee.js --include ./YUITest_tests/files.js --include ./YUITest_tests/utils.js --include ./YUITest_tests/preprocessor.js",
+    "test": "c8 mocha"
   },
   "preferGlobal": "true",
   "license": "BSD-3-Clause",
