@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x]
+        node-version: [20.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -27,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [6.x, 7.x, 8.x]
+        node-version: [20.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -37,3 +37,21 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
+
+  tests-istanbul:
+
+    runs-on: ubuntu-latest
+    needs: linting
+
+    strategy:
+      matrix:
+        node-version: [6.x, 7.x, 8.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run test-istanbul
