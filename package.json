@@ -79,7 +79,7 @@
     "yui": "^3.18.1"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^8.42.0",
     "istanbul": "^0.3.16",
     "c8": "^7.14.0",
     "mocha": "^10.0.0",
@@ -88,7 +88,7 @@
     "yuitest": "^0.7.9"
   },
   "scripts": {
-    "linting": "eslint lib/*.js tests/*.js",
+    "linting": "eslint lib/*.js test/*.js",
     "test-istanbul": "istanbul cover --print=both --yui ytestrunner -- --include ./YUITest_tests/options.js --include ./YUITest_tests/builder.js --include ./YUITest_tests/parser.js --include ./YUITest_tests/parser_coffee.js --include ./YUITest_tests/files.js --include ./YUITest_tests/utils.js --include ./YUITest_tests/preprocessor.js",
     "test": "c8 mocha"
   },
