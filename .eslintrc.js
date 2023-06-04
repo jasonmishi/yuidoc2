@@ -1,10 +1,12 @@
-{
+module.exports = {
   "env": {
-    "node": true
+    "node": true,
+    "es6": true,
+    "mocha": true
   },
   "extends": "eslint:recommended",
   "globals": {
-    "YUI": true
+    "YUI": "writable"
   },
   "rules": {
     "no-console": 0,
