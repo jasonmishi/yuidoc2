@@ -1,4 +1,4 @@
-YUIDoc
+YUIDoc2
 ======
 
 YUI's JavaScript Documentation engine.
@@ -11,15 +11,15 @@ YUI's JavaScript Documentation engine.
 Overview
 --------
 
-YUIDoc is a [Node.js](http://nodejs.org/) application used at build time to
-generate API documentation for JavaScript code. YUIDoc is comment-driven and supports a wide
-range of JavaScript coding styles. The output of YUIDoc is API documentation formatted as a
+YUIDoc2 is a [Node.js](http://nodejs.org/) application used at build time to
+generate API documentation for JavaScript code. YUIDoc2 is comment-driven and supports a wide
+range of JavaScript coding styles. The output of YUIDoc2 is API documentation formatted as a
 set of HTML pages including information about methods, properties, custom events and
 inheritance for JavaScript objects.
 
-YUIDoc was originally written for the YUI Project; it uses YUI JavaScript and CSS in the
-generated files and it supports common YUI conventions like Custom Events. That said,
-it can be used easily and productively on non-YUI code.
+YUIDoc2 is a continutaion of YUIDoc which was originally written for the YUI Project; it uses
+YUI JavaScript and CSS in the generated files and it supports common YUI conventions like
+Custom Events. That said, it can be used easily and productively on non-YUI code.
 
 Installation
 ------------
