@@ -7,6 +7,16 @@ process.chdir(__dirname);
 
 describe('Files Test Suite', function () {
 
+  
+  async function waitForFileExists(filePath, currentTime = 0) {
+    if (fs.existsSync(filePath)) return true;
+    if (currentTime === 1000) return false;
+    // wait for 0.1 second
+    await new Promise((resolve, reject) => setTimeout(() => resolve(true), 20));
+    // waited for 0.02 second
+    return waitForFileExists(filePath, currentTime + 20);
+  }
+
   it('test: exits', function (done) {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.exists('file1.txt', function (exists) {
@@ -31,14 +41,6 @@ describe('Files Test Suite', function () {
     Y.Files.copyPath('file1.txt', 'file2.txt', true, function (err) {
       assert.equal(err, undefined);
     });
-    async function waitForFileExists(filePath, currentTime = 0, timeout = 5000) {
-      if (fs.existsSync(filePath)) return true;
-      if (currentTime === timeout) return false;
-      // wait for 1 second
-      await new Promise((resolve, reject) => setTimeout(() => resolve(true), 1000));
-      // waited for 1 second
-      return waitForFileExists(filePath, currentTime + 1000, timeout);
-    }
 
     return waitForFileExists('file2.txt').then((exists) => {
       fs.unlinkSync('file2.txt');
