@@ -7,6 +7,7 @@ process.chdir(__dirname);
 
 describe('Files Test Suite', function () {
 
+  // TODO: Fix the code to be more test/user friendly maybe return a promise on delete
   async function waitForFileExists(filePath, currentTime = 0) {
     if (fs.existsSync(filePath)) return true;
     if (currentTime === 1000) return false;
@@ -46,13 +47,15 @@ describe('Files Test Suite', function () {
     });
   });
 
-  it('test: copyPath for file', function (done) {
+  it('test: copyPath for file', function () {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.copyPath('file1.txt', 'file2.txt', true, function (err) {
       fs.unlinkSync('file1.txt');
-      fs.unlinkSync('file2.txt');
       assert.equal(err, undefined);
-      done();
+    });
+    return waitForFileExists('file2.txt').then((exists) => {
+      assert.equal(exists, true);
+      fs.unlinkSync('file2.txt');
     });
   });
 
