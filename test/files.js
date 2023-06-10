@@ -7,6 +7,14 @@ process.chdir(__dirname);
 
 describe('Files Test Suite', function () {
 
+  async function waitForFileExists(filePath, currentTime = 0) {
+    if (fs.existsSync(filePath)) return true;
+    if (currentTime === 1000) return false;
+    // wait for 0.02 second
+    await new Promise((resolve) => setTimeout(() => resolve(true), 20));
+    return waitForFileExists(filePath, currentTime + 20);
+  }
+
   it('test: exits', function (done) {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.exists('file1.txt', function (exists) {
