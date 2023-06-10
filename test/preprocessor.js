@@ -96,4 +96,8 @@ describe('Preprocessor Test Suite', function () {
     fs.unlinkSync('../node_modules/testpreprocessormodule/testpreprocessormodule.js');
     fs.rmdirSync('../node_modules/testpreprocessormodule');
   });
+
+  afterEach(function () {
+    fs.rmSync('./out', { recursive: true, force: true });
+  });
 })
