@@ -11,5 +11,8 @@ module.exports = {
   "rules": {
     "no-console": 0,
     "quotes": [2, "single"]
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
   }
 }
