@@ -22,12 +22,12 @@ jobs:
 
   tests:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: linting
 
     strategy:
       matrix:
-        node-version: [20.2.x]
+        node-version: [20.3.x]
 
     steps:
       - uses: actions/checkout@v3
