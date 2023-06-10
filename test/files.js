@@ -39,7 +39,7 @@ describe('Files Test Suite', function () {
   it('test: copyPath for file', function (done) {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.copyPath('file1.txt', 'file2.txt', true, function (err) {
-      fs.unlinkSync('file2.txt');
+      // fs.unlinkSync('file2.txt');
       fs.unlinkSync('file1.txt');
       assert.equal(err, undefined);
       done();
