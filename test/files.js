@@ -26,14 +26,23 @@ describe('Files Test Suite', function () {
     });
   });
 
-  it('test: copyPath for file', function (done) {
+  it('test: copyPath for file', function () {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.copyPath('file1.txt', 'file2.txt', true, function (err) {
-      fs.unlinkSync('file2.txt');
-      fs.unlinkSync('file1.txt');
       assert.equal(err, undefined);
-      done();
     });
+    async function waitForFileExists(filePath, currentTime = 0, timeout = 5000) {
+      if (fs.existsSync(filePath)) return true;
+      if (currentTime === timeout) return false;
+      // wait for 1 second
+      await new Promise((resolve, reject) => setTimeout(() => resolve(true), 1000));
+      // waited for 1 second
+      return waitForFileExists(filePath, currentTime + 1000, timeout);
+    }
+
+    return waitForFileExists('file2.txt').then((exists) => {
+      fs.unlinkSync('file2.txt');
+    })
   });
 
   it('test: copyPath for directory', function (done) {
