@@ -34,13 +34,15 @@ describe('Files Test Suite', function () {
     });
   });
 
-  it('test: copyFile', function (done) {
+  it('test: copyFile', function () {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.copyFile('file1.txt', 'file2.txt', true, function (err) {
       fs.unlinkSync('file1.txt');
-      fs.unlinkSync('file2.txt');
       assert.equal(err, undefined);
-      done();
+    });
+    return waitForFileExists('file2.txt').then((exists) => {
+      assert.equal(exists, true);
+      fs.unlinkSync('file2.txt');
     });
   });
 
