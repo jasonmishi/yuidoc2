@@ -97,7 +97,25 @@ describe('Preprocessor Test Suite', function () {
     fs.rmdirSync('../node_modules/testpreprocessormodule');
   });
 
-  afterEach(function () {
-    fs.rmSync('./out', { recursive: true, force: true });
+  //TODO: Fix this to be be unnecessary
+  /**
+   * This is necessary because files are written to asynchronously.
+   * not waiting for the file to exist can cause the test to fail.
+  */
+  async function waitForFileExists(filePath, currentTime = 0) {
+    if (fs.existsSync(filePath)) return true;
+    if (currentTime === 1000) return false;
+
+    await new Promise((resolve) => setTimeout(() => resolve(true), 20));
+
+    return waitForFileExists(filePath, currentTime + 20);
+  }
+
+  afterEach(async function () {
+    return waitForFileExists(path.join('./out', 'data.json')).then(function (exists) {
+      if (exists) {
+        fs.rmSync('./out', { recursive: true });
+      }
+    });
   });
 })
