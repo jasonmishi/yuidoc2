@@ -89,7 +89,7 @@
   },
   "scripts": {
     "linting": "eslint lib/*.js test/*.js",
-    "test-istanbul": "istanbul cover --print=both --yui ytestrunner -- --include ./YUITest_tests/options.js --include ./YUITest_tests/builder.js --include ./YUITest_tests/parser.js --include ./YUITest_tests/parser_coffee.js --include ./YUITest_tests/files.js --include ./YUITest_tests/utils.js --include ./YUITest_tests/preprocessor.js",
+    "test-istanbul": "istanbul cover --print=both --yui ytestrunner -- --include ./legacy_tests/options.js --include ./legacy_tests/builder.js --include ./legacy_tests/parser.js --include ./legacy_tests/parser_coffee.js --include ./legacy_tests/files.js --include ./legacy_tests/utils.js --include ./legacy_tests/preprocessor.js",
     "test": "c8 mocha"
   },
   "preferGlobal": "true",
