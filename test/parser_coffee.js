@@ -1,6 +1,5 @@
 var assert = require('assert');
 var path = require('path');
-var fs = require('fs');
 var Y = require(path.join(__dirname, '../', 'lib', 'index'));
 
 describe('CoffeeScript Parser Test Suite', function () {
