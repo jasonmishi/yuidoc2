@@ -417,17 +417,16 @@ describe('Parser Test Suite', function () {
 
     it('test: tag fixing', function () {
       const item = findByName('testoptional', 'myclass', this.data.classitems);
-
       assert.ok(isObject(item), 'failed to find item');
       assert.notStrictEqual(item.return, undefined, 'Failed to replace returns with return');
 
-      item = findByName('_positionChangeHandler', 'Axis', this.data.classitems);
-      assert.ok(isObject(item), 'failed to find item');
-      assert.strictEqual(item.params.length, 1, 'Failed to replace parma with param');
+      const item2 = findByName('_positionChangeHandler', 'Axis', this.data.classitems);
+      assert.ok(isObject(item2), 'failed to find item');
+      assert.strictEqual(item2.params.length, 1, 'Failed to replace parma with param');
 
-      item = findByName('crashTest', 'OtherClass2', this.data.classitems);
-      assert.ok(isObject(item), 'failed to find item');
-      assert.strictEqual(item.params.length, 1, 'Failed to replace params with param');
+      const item3 = findByName('crashTest', 'OtherClass2', this.data.classitems);
+      assert.ok(isObject(item3), 'failed to find item');
+      assert.strictEqual(item3.params.length, 1, 'Failed to replace params with param');
     });
 
     it('test: double namespaces', function () {
