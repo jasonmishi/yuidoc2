@@ -23,9 +23,9 @@ describe('CoffeeScript Parser Test Suite', function () {
         syntaxtype: 'coffee'
       })).run();
 
-      waitForFileExists(path.join(__dirname, 'out', 'data.json'));
-
       this.project = json.project;
+
+      return waitForFileExists(path.join(__dirname, 'out', 'data.json'));
     });
 
     it('test: CoffeeScript Project Data 1', function () {
@@ -53,9 +53,9 @@ describe('CoffeeScript Parser Test Suite', function () {
         syntaxtype: 'coffee'
       })).run();
 
-      waitForFileExists(path.join(__dirname, 'out', 'data.json'));
-
       this.project = json.project;
+
+      return waitForFileExists(path.join(__dirname, 'out', 'data.json'));
     });
 
     it('test: CoffeeScript Project Data 2', function () {

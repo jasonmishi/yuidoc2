@@ -42,10 +42,10 @@ describe('Parser Test Suite', function () {
       outdir: './out'
     })).run();
 
-    waitForFileExists(path.join(__dirname, 'out', 'data.json'));
-
     this.project = json.project;
     this.data = json;
+
+    return waitForFileExists(path.join(__dirname, 'out', 'data.json'));
   });
 
   describe('Project Data', function () {
