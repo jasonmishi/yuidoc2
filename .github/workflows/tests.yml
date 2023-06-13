@@ -38,7 +38,7 @@ jobs:
       - run: npm install
       - run: npm test
 
-  tests-istanbul:
+  legacy-tests:
 
     runs-on: ubuntu-latest
     needs: linting
@@ -54,4 +54,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: npm run test-istanbul
+      - run: npm run legacy-tests
