@@ -5,7 +5,7 @@ var Y = require(path.join(__dirname, '../', 'lib', 'index'));
 
 describe('Parser Test Suite', function () {
   function isObject(obj) {
-    let type = typeof obj;
+    const type = typeof obj;
     return type === 'function' || (type === 'object' && !!obj);
   }
 

@@ -5,12 +5,12 @@ var Y = require(path.join(__dirname, '../', 'lib', 'index'));
 
 process.chdir(__dirname);
 
-function isObject(obj) {
-  var type = typeof obj;
-  return type === 'function' || (type === 'object' && !!obj);
-}
-
 describe('Preprocessor Test Suite', function () {
+  function isObject(obj) {
+    const type = typeof obj;
+    return type === 'function' || (type === 'object' && !!obj);
+  }
+
   it('test: single preprocessor', function () {
     global.testPreprocessorCallCount = 0;
 
