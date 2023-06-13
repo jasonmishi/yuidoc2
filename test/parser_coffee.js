@@ -4,6 +4,14 @@ var Y = require(path.join(__dirname, '../', 'lib', 'index'));
 
 describe('CoffeeScript Parser Test Suite', function () {
 
+  async function waitForFileExists(filePath, currentTime = 0) {
+    if (fs.existsSync(filePath)) return true;
+    if (currentTime === 1000) return false;
+    // wait for 0.02 second
+    await new Promise((resolve) => setTimeout(() => resolve(true), 20));
+    return waitForFileExists(filePath, currentTime + 20);
+  }
+
   describe('CoffeeScript Parser Test 1', function () {
     before(function () {
       const json = (new Y.YUIDoc({
@@ -13,6 +21,8 @@ describe('CoffeeScript Parser Test Suite', function () {
         extension: '.coffee',
         syntaxtype: 'coffee'
       })).run();
+
+      waitForFileExists(path.join(__dirname, 'out', 'data.json'));
 
       this.project = json.project;
     });
@@ -41,6 +51,8 @@ describe('CoffeeScript Parser Test Suite', function () {
         extension: '.coffee',
         syntaxtype: 'coffee'
       })).run();
+
+      waitForFileExists(path.join(__dirname, 'out', 'data.json'));
 
       this.project = json.project;
     });

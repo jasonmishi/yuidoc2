@@ -21,6 +21,14 @@ describe('Parser Test Suite', function () {
     return ret;
   }
 
+  async function waitForFileExists(filePath, currentTime = 0) {
+    if (fs.existsSync(filePath)) return true;
+    if (currentTime === 1000) return false;
+    // wait for 0.02 second
+    await new Promise((resolve) => setTimeout(() => resolve(true), 20));
+    return waitForFileExists(filePath, currentTime + 20);
+  }
+
   before(function () {
     const json = (new Y.YUIDoc({
       quiet: true,
@@ -33,6 +41,8 @@ describe('Parser Test Suite', function () {
       ],
       outdir: './out'
     })).run();
+
+    waitForFileExists(path.join(__dirname, 'out', 'data.json'));
 
     this.project = json.project;
     this.data = json;
