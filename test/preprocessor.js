@@ -21,8 +21,8 @@ describe('Preprocessor Test Suite', function () {
       preprocessor: 'lib/testpreprocessor.js'
     })).run();
 
-    assert.equal(isObject(json), true);
-    assert.equal(global.testPreprocessorCallCount, 1, 'the preprocessor was not called');
+    assert.strictEqual(isObject(json), true);
+    assert.strictEqual(global.testPreprocessorCallCount, 1, 'the preprocessor was not called');
   });
 
   it('test: single preprocessor with absolute path', function () {
@@ -35,8 +35,8 @@ describe('Preprocessor Test Suite', function () {
       preprocessor: path.join(process.cwd(), '/lib/testpreprocessor.js')
     })).run();
 
-    assert.equal(isObject(json), true);
-    assert.equal(global.testPreprocessorCallCount, 1, 'the preprocessor was not called when an absolute path was used');
+    assert.strictEqual(isObject(json), true);
+    assert.strictEqual(global.testPreprocessorCallCount, 1, 'the preprocessor was not called when an absolute path was used');
   });
 
   it('test: several preprocessors', function () {
@@ -49,8 +49,8 @@ describe('Preprocessor Test Suite', function () {
       preprocessor: ['lib/testpreprocessor.js', './lib/testpreprocessor']
     })).run();
 
-    assert.equal(isObject(json), true);
-    assert.equal(global.testPreprocessorCallCount, 2, 'the preprocessor was not called twice');
+    assert.strictEqual(isObject(json), true);
+    assert.strictEqual(global.testPreprocessorCallCount, 2, 'the preprocessor was not called twice');
   });
 
   it('test: the test preprocessor does its job', function () {
@@ -62,8 +62,8 @@ describe('Preprocessor Test Suite', function () {
       star: '#'
     })).run();
 
-    assert.equal(isObject(json), true);
-    assert.equal(json.classes.TestPreprocessor.customtagPlusStar, 'hello#', 'the preprocessor did not modify the data');
+    assert.strictEqual(isObject(json), true);
+    assert.strictEqual(json.classes.TestPreprocessor.customtagPlusStar, 'hello#', 'the preprocessor did not modify the data');
   });
 
   it('test: load preprocessor as a npm module', function () {
@@ -88,8 +88,8 @@ describe('Preprocessor Test Suite', function () {
       preprocessor: 'testpreprocessormodule'
     })).run();
 
-    assert.equal(isObject(json), true);
-    assert.equal(json.testModuleWasHere, true, 'the preprocesor module was not run')
+    assert.strictEqual(isObject(json), true);
+    assert.strictEqual(json.testModuleWasHere, true, 'the preprocesor module was not run')
 
     // Clean up things when we are done.
     fs.unlinkSync('../node_modules/testpreprocessormodule/package.json');

@@ -51,16 +51,16 @@ describe('Parser Test Suite', function () {
   describe('Project Data', function () {
 
     it('test: out directory', function () {
-      assert.equal(fs.existsSync(path.join(__dirname, 'out')), true, 'Failed to create out directory');
+      assert.strictEqual(fs.existsSync(path.join(__dirname, 'out')), true, 'Failed to create out directory');
     });
 
     it('test: data.json creation', function () {
-      assert.equal(fs.existsSync(path.join(__dirname, 'out', 'data.json')), true, 'data.json file was not created');
+      assert.strictEqual(fs.existsSync(path.join(__dirname, 'out', 'data.json')), true, 'data.json file was not created');
     });
 
     it('test: parser', function () {
       let keys = Object.keys(this.data);
-      assert.equal(keys.length, 7, 'Failed to populate all fields');
+      assert.strictEqual(keys.length, 7, 'Failed to populate all fields');
       assert.deepStrictEqual(keys, ['project', 'files', 'modules', 'classes', 'elements', 'classitems', 'warnings'], 'Object keys are wrong');
     });
 
@@ -83,7 +83,7 @@ describe('Parser Test Suite', function () {
 
       // 1 module, 3 classes
       const one = files[path.normalize('input/test/anim.js')];
-      assert.equal(isObject(one), true, 'Failed to parse input/test/anim.js');
+      assert.strictEqual(isObject(one), true, 'Failed to parse input/test/anim.js');
       assert.strictEqual(Object.keys(one.modules).length, 1, '1 module should be found');
       assert.strictEqual(Object.keys(one.classes).length, 3, '3 classes should be found');
 
