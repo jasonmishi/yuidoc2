@@ -20,7 +20,7 @@ describe('Files Test Suite', function () {
     fs.writeFileSync('file1.txt', 'Files Test');
     Y.Files.exists('file1.txt', function (exists) {
       fs.unlinkSync('file1.txt');
-      assert.strictEqual(exists, true);
+      assert.ok(exists);
       done();
     });
   });
@@ -42,7 +42,7 @@ describe('Files Test Suite', function () {
       assert.strictEqual(err, undefined);
     });
     return waitForFileExists('file2.txt').then((exists) => {
-      assert.strictEqual(exists, true);
+      assert.ok(exists);
       fs.unlinkSync('file2.txt');
     });
   });
@@ -54,7 +54,7 @@ describe('Files Test Suite', function () {
       assert.strictEqual(err, undefined);
     });
     return waitForFileExists('file2.txt').then((exists) => {
-      assert.strictEqual(exists, true);
+      assert.ok(exists);
       fs.unlinkSync('file2.txt');
     });
   });
@@ -81,7 +81,7 @@ describe('Files Test Suite', function () {
     fs.symlinkSync('file1.txt', 'file2.txt');
     Y.Files.deletePath('file2.txt');
     assert.strictEqual(fs.existsSync('file2.txt'), false);
-    assert.strictEqual(fs.existsSync('file1.txt'), true);
+    assert.ok(fs.existsSync('file1.txt'));
     done();
   });
 
@@ -94,7 +94,7 @@ describe('Files Test Suite', function () {
 
   it('test: isDirectory for directory', function (done) {
     fs.mkdirSync('dir1');
-    assert.strictEqual(Y.Files.isDirectory('dir1'), true);
+    assert.ok(Y.Files.isDirectory('dir1'));
     fs.rmdirSync('dir1');
     done();
   });
@@ -102,7 +102,7 @@ describe('Files Test Suite', function () {
   it('test: isDirectory for symbolic link', function (done) {
     fs.mkdirSync('dir1');
     fs.symlinkSync('dir1', 'dir2');
-    assert.strictEqual(Y.Files.isDirectory('dir2'), true);
+    assert.ok(Y.Files.isDirectory('dir2'));
     assert.strictEqual(Y.Files.isDirectory('dir2', false), false);
     fs.unlinkSync('dir2');
     fs.rmdirSync('dir1');
@@ -111,7 +111,7 @@ describe('Files Test Suite', function () {
 
   it('test: isFile for file', function (done) {
     fs.writeFileSync('file1.txt', 'Files Test');
-    assert.strictEqual(Y.Files.isFile('file1.txt'), true);
+    assert.ok(Y.Files.isFile('file1.txt'));
     fs.unlinkSync('file1.txt');
     done();
   });
@@ -119,7 +119,7 @@ describe('Files Test Suite', function () {
   it('test: isFile for symbolic link', function (done) {
     fs.writeFileSync('file1.txt', 'Files Test');
     fs.symlinkSync('file1.txt', 'file2.txt');
-    assert.strictEqual(Y.Files.isFile('file2.txt', true), true);
+    assert.ok(Y.Files.isFile('file2.txt', true));
     assert.strictEqual(Y.Files.isFile('file2.txt'), false);
     fs.unlinkSync('file2.txt');
     fs.unlinkSync('file1.txt');
@@ -129,7 +129,7 @@ describe('Files Test Suite', function () {
   it('test: isSymbolicLink', function (done) {
     fs.writeFileSync('file1.txt', 'Files Test');
     fs.symlinkSync('file1.txt', 'file2.txt');
-    assert.strictEqual(Y.Files.isSymbolicLink('file2.txt'), true);
+    assert.ok(Y.Files.isSymbolicLink('file2.txt'));
     fs.unlinkSync('file2.txt');
     fs.unlinkSync('file1.txt');
     done();
@@ -161,8 +161,8 @@ describe('Files Test Suite', function () {
     fs.writeFileSync('dir1/file1.txt', 'Files Test');
     fs.writeFileSync('dir2/file2.txt', 'Files Test');
     Y.Files.copyAssets(['dir1', 'dir2'], 'dir3', false, function () {
-      assert.strictEqual(fs.existsSync('dir3/file1.txt'), true);
-      assert.strictEqual(fs.existsSync('dir3/file2.txt'), true);
+      assert.ok(fs.existsSync('dir3/file1.txt'));
+      assert.ok(fs.existsSync('dir3/file2.txt'));
       fs.unlinkSync('dir3/file1.txt');
       fs.unlinkSync('dir3/file2.txt');
       fs.unlinkSync('dir2/file2.txt');
@@ -176,14 +176,14 @@ describe('Files Test Suite', function () {
 
   it('test: getJSON', function (done) {
     const data = Y.Files.getJSON('input/folders1/yuidoc.json');
-    assert.strictEqual(data instanceof Object, true);
+    assert.ok(data instanceof Object);
     assert.strictEqual(data.name, 'yuidoc-root');
     done();
   });
 
   it('test: writeFile', function (done) {
     Y.Files.writeFile('file1.txt', 'Files Test', function () {
-      assert.strictEqual(fs.existsSync('file1.txt'), true);
+      assert.ok(fs.existsSync('file1.txt'));
       fs.unlinkSync('file1.txt');
       done();
     });

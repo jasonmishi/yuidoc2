@@ -49,7 +49,7 @@ describe('Utils Test Suite', function () {
       };
       options = Y.Project.init(options);
 
-      assert.strictEqual(Array.isArray(options.paths), true, 'Failed to set path');
+      assert.ok(Array.isArray(options.paths), 'Failed to set path');
       assert.strictEqual(options.paths.length, 3, 'Failed to retrieve all path options');
 
       // then with an Array of path
@@ -60,7 +60,7 @@ describe('Utils Test Suite', function () {
       };
       options = Y.Project.init(options);
 
-      assert.strictEqual(Array.isArray(options.paths), true, 'Failed to set path');
+      assert.ok(Array.isArray(options.paths), 'Failed to set path');
       assert.strictEqual(options.paths.length, 3, 'Failed to retrieve all path options');
 
 
@@ -70,7 +70,7 @@ describe('Utils Test Suite', function () {
       ]);
       options = Y.Project.init(options);
 
-      assert.strictEqual(Array.isArray(options.paths), true, 'Failed to set path');
+      assert.ok(Array.isArray(options.paths), 'Failed to set path');
       assert.strictEqual(options.paths.length, 3, 'Failed to retrieve all path options');
     });
 
@@ -89,7 +89,7 @@ describe('Utils Test Suite', function () {
       };
       options = Y.Project.init(options);
 
-      assert.strictEqual(Array.isArray(options.paths), true, 'paths are present');
+      assert.ok(Array.isArray(options.paths), 'paths are present');
       assert.strictEqual(options.paths.length, 1, 'one path present');
       assert.strictEqual(options.paths[0], 'a', 'path a is in paths');
     });
@@ -116,7 +116,7 @@ describe('Utils Test Suite', function () {
     it('test: gets paths as array', function() {
         const pathPrefix = __dirname + '/input/folders1';
         const dirs = Y.getDirs(pathPrefix, []);
-        assert.strictEqual(Array.isArray(dirs), true);
+        assert.ok(Array.isArray(dirs));
         assert.strictEqual(dirs.length, 2);
         assert.notEqual(dirs.indexOf(pathPrefix + '/one'), -1, 'contains path /one');
         assert.notEqual(dirs.indexOf(pathPrefix + '/one/two'), -1, 'contains path /one/two');
@@ -126,7 +126,7 @@ describe('Utils Test Suite', function () {
       const pathPrefix = __dirname + '/input/folders1';
       process.chdir(pathPrefix);
       const dirs = Y.getDirs('.', []);
-      assert.strictEqual(Array.isArray(dirs), true);
+      assert.ok(Array.isArray(dirs));
       assert.strictEqual(dirs.length, 2);
       assert.notEqual(dirs.indexOf('one'), -1, 'contains path /one');
       assert.notEqual(dirs.indexOf('one/two'), -1, 'contains path /one/two');
@@ -136,7 +136,7 @@ describe('Utils Test Suite', function () {
         process.chdir(__dirname);
         const pathPrefix = __dirname + '/input/with-symlink';
         const dirs = Y.getDirs(pathPrefix, ['c']);
-        assert.strictEqual(Array.isArray(dirs), true);
+        assert.ok(Array.isArray(dirs));
         assert.strictEqual(dirs.length, 2);
         assert.strictEqual(dirs.indexOf(pathPrefix + '.gitignore'), -1, 'does not contain file some-file');
         assert.strictEqual(dirs.indexOf(pathPrefix + '/a/b'), -1, 'does not contain symlink /a/b');

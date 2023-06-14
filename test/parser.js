@@ -51,11 +51,11 @@ describe('Parser Test Suite', function () {
   describe('Project Data', function () {
 
     it('test: out directory', function () {
-      assert.strictEqual(fs.existsSync(path.join(__dirname, 'out')), true, 'Failed to create out directory');
+      assert.ok(fs.existsSync(path.join(__dirname, 'out')), 'Failed to create out directory');
     });
 
     it('test: data.json creation', function () {
-      assert.strictEqual(fs.existsSync(path.join(__dirname, 'out', 'data.json')), true, 'data.json file was not created');
+      assert.ok(fs.existsSync(path.join(__dirname, 'out', 'data.json')), 'data.json file was not created');
     });
 
     it('test: parser', function () {
@@ -83,7 +83,7 @@ describe('Parser Test Suite', function () {
 
       // 1 module, 3 classes
       const one = files[path.normalize('input/test/anim.js')];
-      assert.strictEqual(isObject(one), true, 'Failed to parse input/test/anim.js');
+      assert.ok(isObject(one), 'Failed to parse input/test/anim.js');
       assert.strictEqual(Object.keys(one.modules).length, 1, '1 module should be found');
       assert.strictEqual(Object.keys(one.classes).length, 3, '3 classes should be found');
 
@@ -445,13 +445,13 @@ describe('Parser Test Suite', function () {
       const mod_good = cls['Foo.Bar'];
 
       assert.strictEqual(mod_bad, undefined, 'Found class Foo.Bar.Foo.Bar');
-      assert.strictEqual(isObject(mod_good), true, 'Failed to parse Foo.Bar namespace');
+      assert.ok(isObject(mod_good), 'Failed to parse Foo.Bar namespace');
     });
 
     it('test: inherited methods', function () {
       const item = findByName('myMethod', 'mywidget.SubWidget', this.data.classitems);
 
-      assert.strictEqual(isObject(item), true, 'Failed to parse second method');
+      assert.ok(isObject(item), 'Failed to parse second method');
     });
 
     it('test: case tags', function () {
