@@ -2,8 +2,6 @@ var assert = require('assert');
 var path = require('path');
 var Y = require(path.join(__dirname, '../', 'lib', 'index'));
 
-process.chdir(__dirname);
-
 describe('Utils Test Suite', function () {
   describe('getProjectData Folder Priority', function () {
     it('test: Nearest Folder Priority', function () {
