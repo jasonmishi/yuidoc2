@@ -1,5 +1,4 @@
-YUIDoc2
-======
+# YUIDoc2
 
 YUI's JavaScript Documentation engine.
 
@@ -8,8 +7,7 @@ YUI's JavaScript Documentation engine.
 [![Dependency Status](https://img.shields.io/david/yui/yuidoc.svg?style=flat-square)](https://david-dm.org/yui/yuidoc)
 [![Tests](https://github.com/jasonmishi/yuidoc2/actions/workflows/tests.yml/badge.svg)](https://github.com/jasomishi/yuidoc2)
 
-Overview
---------
+## Overview
 
 YUIDoc2 is a [Node.js](http://nodejs.org/) application used at build time to
 generate API documentation for JavaScript code. YUIDoc2 is comment-driven and supports a wide
@@ -21,25 +19,21 @@ YUIDoc2 is a continutaion of YUIDoc which was originally written for the YUI Pro
 YUI JavaScript and CSS in the generated files and it supports common YUI conventions like
 Custom Events. That said, it can be used easily and productively on non-YUI code.
 
-Installation
-------------
+## Installation
 
     npm install -g yuidocjs
 
-Documentation
--------------
+## Documentation
 
-* [User Guides](http://yui.github.io/yuidoc/)
+* [User Guides](https://jasonmishi.github.io/yuidoc2.github.io/)
 * [Change Logs](https://github.com/yui/yuidoc/releases)
 * [API Docs](http://yui.github.io/yuidoc/api/)
 * [Mailing List](https://groups.google.com/forum/#!forum/yuidoc)
 
-Contributing
-------------
+## Contributing
 
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md).
 
-License
--------
+## License
 
 This software is free to use under the Yahoo Inc. BSD license. See the [LICENSE file](LICENSE) for license text and copyright information.
