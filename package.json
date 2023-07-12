@@ -101,20 +101,6 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "http://github.com/yui/yuidoc.git"
-  },
-  "yuidoc": {
-    "name": "YUIDoc",
-    "options": {
-      "external": {
-        "data": "https://yuilibrary.com/yui/docs/api/data.json"
-      },
-      "linkNatives": "true",
-      "attributesEmit": "true",
-      "paths": [
-        "./lib"
-      ],
-      "outdir": "./output/api"
-    }
+    "url": "https://github.com/jasonmishi/yuidoc2.git"
   }
 }

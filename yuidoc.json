@@ -1,0 +1,14 @@
+{
+    "name": "yuidoc2",
+    "options": {
+      "external": {
+        "data": "https://raw.githubusercontent.com/jasonmishi/yuidoc2/main/data/yui-api-data.json"
+      },
+      "paths": [
+        "./lib"
+      ],
+      "linkNatives": "true",
+      "attributesEmit": "true",
+      "outdir": "./output/api"
+    }
+}
