@@ -1,12 +1,16 @@
 {
-  "name": "yuidocjs",
-  "version": "0.10.3",
-  "description": "YUIDoc, YUI's JavaScript Documentation engine.",
-  "author": "Dav Glass <davglass@gmail.com>",
+  "name": "yuidoc2",
+  "version": "0.1.0",
+  "description": "yuidoc2, a drop in replacement for YUIDoc, YUI's JavaScript Documentation engine.",
+  "author": "Jason Mishike <jasonmishi@gmail.com>",
   "bugs": {
-    "url": "http://github.com/yui/yuidoc/issues"
+    "url": "https://github.com/jasonmishi/yuidoc2/issues"
   },
   "contributors": [
+    {
+      "name": "Dav Glass",
+      "email": "davglass@gmail.com"
+    },
     {
       "name": "Adam Moore",
       "email": "amoore@gmail.com"
@@ -56,6 +60,7 @@
     "node": ">=0.10.0"
   },
   "keywords": [
+    "yuidoc",
     "yui",
     "jsdoc",
     "coffeescript",

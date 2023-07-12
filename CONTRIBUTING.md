@@ -1,4 +1,4 @@
-Contributing to YUIDoc
+Contributing to yuidoc2
 ======================
 
 Getting Involved
@@ -6,8 +6,8 @@ Getting Involved
 
 If you want to work on the default theme or need to work on the libraries, here's the steps:
 
-    $ git clone git://github.com/yui/yuidoc.git
-    $ cd yuidoc
+    $ git clone https://github.com/jasonmishi/yuidoc2.git
+    $ cd yuidoc2
     $ npm link
 
 This will link `yuidoc` into the global folder. This basically installs it globally as a
