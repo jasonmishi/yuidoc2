@@ -1,6 +1,6 @@
-# YUIDoc2
+# yuidoc2
 
-YUI's JavaScript Documentation engine.
+A drop-in replacement for yuidoc, YUI's JavaScript Documentation engine.
 
 [![npm Version](https://img.shields.io/npm/v/yuidocjs.svg?style=flat-square)](https://www.npmjs.org/package/yuidocjs)
 [![Build Status](http://img.shields.io/travis/yui/yuidoc.svg?style=flat-square)](https://travis-ci.org/yui/yuidoc)
@@ -9,13 +9,13 @@ YUI's JavaScript Documentation engine.
 
 ## Overview
 
-YUIDoc2 is a [Node.js](http://nodejs.org/) application used at build time to
-generate API documentation for JavaScript code. YUIDoc2 is comment-driven and supports a wide
-range of JavaScript coding styles. The output of YUIDoc2 is API documentation formatted as a
+yuidoc2 is a [Node.js](http://nodejs.org/) application used at build time to
+generate API documentation for JavaScript code. yuidoc2 is comment-driven and supports a wide
+range of JavaScript coding styles. The output of yuidoc2 is API documentation formatted as a
 set of HTML pages including information about methods, properties, custom events and
 inheritance for JavaScript objects.
 
-YUIDoc2 is a continutaion of YUIDoc which was originally written for the YUI Project; it uses
+yuidoc2 is a continutaion of YUIDoc which was originally written for the YUI Project; it uses
 YUI JavaScript and CSS in the generated files and it supports common YUI conventions like
 Custom Events. That said, it can be used easily and productively on non-YUI code.
 
