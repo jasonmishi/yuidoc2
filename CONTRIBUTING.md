@@ -38,11 +38,3 @@ Submitting Pull Requests
 Pull Requests are very welcome, but should be within the scope of the project, and follow the
 repository's code conventions. Before submitting a Pull Request, it's always good to file an
 issue, so we can discuss the details of the Pull Request.
-
-The Yahoo CLA
--------------
-
-At Yahoo, we have a single [Yahoo Open Source Contributor License Agreement][CLA] that we ask
-contributors to electronically sign before merging in their Pull Requests.
-
-[CLA]: https://yahoocla.herokuapp.com/
