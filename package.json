@@ -85,11 +85,9 @@
   },
   "devDependencies": {
     "eslint": "^8.42.0",
-    "istanbul": "^0.3.16",
     "c8": "^7.14.0",
     "mocha": "^10.0.0",
     "selleck": "^0.1.18",
-    "ytestrunner": "^0.3.3",
     "yuitest": "^0.7.9"
   },
   "scripts": {
