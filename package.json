@@ -94,7 +94,6 @@
     "linting": "eslint lib/*.js test/*.js",
     "test": "c8 mocha"
   },
-  "preferGlobal": "true",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
