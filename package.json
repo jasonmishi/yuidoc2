@@ -87,8 +87,7 @@
     "eslint": "^8.42.0",
     "c8": "^7.14.0",
     "mocha": "^10.0.0",
-    "selleck": "^0.1.18",
-    "yuitest": "^0.7.9"
+    "selleck": "^0.1.18"
   },
   "scripts": {
     "linting": "eslint lib/*.js test/*.js",
